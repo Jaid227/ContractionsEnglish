@@ -1,0 +1,1162 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contracciones en Inglés — Guía Completa</title>
+<style>
+  :root {
+    --bg: #f5f7fa;
+    --card: #ffffff;
+    --text: #1a1a1a;
+    --text-soft: #555;
+    --accent: #6c5ce7;
+    --accent-2: #00b894;
+    --tobe: #0984e3;
+    --have: #e17055;
+    --will: #6c5ce7;
+    --negative: #d63031;
+    --question: #00b894;
+    --informal: #f39c12;
+    --double: #8e44ad;
+    --border: #e0e0e0;
+    --shadow: 0 4px 20px rgba(0,0,0,0.08);
+    --check-bg: #f9f9fc;
+    --info-bg: #eef6ff;
+    --pron-bg: #f0fdf4;
+  }
+  [data-theme="dark"] {
+    --bg: #0f0f17;
+    --card: #1a1a25;
+    --text: #eaeaea;
+    --text-soft: #a0a0b0;
+    --accent: #a29bfe;
+    --accent-2: #55efc4;
+    --tobe: #74b9ff;
+    --have: #fab1a0;
+    --will: #a29bfe;
+    --negative: #ff7675;
+    --question: #55efc4;
+    --informal: #fdcb6e;
+    --double: #c39bd3;
+    --border: #2a2a3a;
+    --shadow: 0 4px 20px rgba(0,0,0,0.5);
+    --check-bg: #202030;
+    --info-bg: #1c2733;
+    --pron-bg: #1a3329;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    transition: background 0.3s, color 0.3s;
+    padding-bottom: 80px;
+  }
+
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: var(--shadow);
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  header h1 {
+    font-size: 1.15rem;
+    background: linear-gradient(135deg, var(--accent), var(--accent-2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .theme-btn {
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: transform 0.2s;
+    font-family: inherit;
+  }
+  .theme-btn:hover { transform: scale(1.05); }
+
+  main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 1.5rem;
+  }
+
+  .intro {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow);
+  }
+  .intro h2 {
+    font-size: 1.35rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent);
+  }
+  .intro p { color: var(--text-soft); margin-bottom: 0.75rem; }
+
+  .progress-bar {
+    background: var(--border);
+    height: 10px;
+    border-radius: 50px;
+    overflow: hidden;
+    margin: 0.5rem 0;
+  }
+  .progress-bar > div {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    transition: width 0.5s;
+    width: 0%;
+  }
+  #progressTxt {
+    font-size: 0.9rem;
+    color: var(--text-soft);
+    font-weight: 600;
+  }
+
+  .tips-box {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--accent-2);
+    border-radius: 12px;
+    padding: 1rem 1.15rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    box-shadow: var(--shadow);
+  }
+  .tips-box h3 {
+    color: var(--accent-2);
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .tips-box ul {
+    margin-left: 1.2rem;
+    color: var(--text-soft);
+  }
+  .tips-box li { margin-bottom: 0.3rem; }
+
+  .search-box {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 50px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    color: var(--text);
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+  .search-box:focus { outline: 2px solid var(--accent); }
+
+  .filter-row {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+  .filter-row button {
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--text-soft);
+    padding: 0.4rem 0.9rem;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+    font-family: inherit;
+  }
+  .filter-row button.active {
+    background: var(--accent);
+    color: white;
+    border-color: var(--accent);
+  }
+  .filter-row button:hover:not(.active) {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+  .filter-row button.active[data-cat="to-be"] { background: var(--tobe); border-color: var(--tobe); }
+  .filter-row button.active[data-cat="have"] { background: var(--have); border-color: var(--have); }
+  .filter-row button.active[data-cat="will"] { background: var(--will); border-color: var(--will); }
+  .filter-row button.active[data-cat="negative"] { background: var(--negative); border-color: var(--negative); }
+  .filter-row button.active[data-cat="question"] { background: var(--question); border-color: var(--question); color: #000; }
+  .filter-row button.active[data-cat="informal"] { background: var(--informal); border-color: var(--informal); color: #000; }
+  .filter-row button.active[data-cat="double"] { background: var(--double); border-color: var(--double); }
+
+  .category-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 1.75rem 0 0.4rem;
+    padding-left: 0.5rem;
+    border-left: 5px solid;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+  }
+  .category-title.to-be { color: var(--tobe); border-color: var(--tobe); }
+  .category-title.have { color: var(--have); border-color: var(--have); }
+  .category-title.will { color: var(--will); border-color: var(--will); }
+  .category-title.negative { color: var(--negative); border-color: var(--negative); }
+  .category-title.question { color: var(--question); border-color: var(--question); }
+  .category-title.informal { color: var(--informal); border-color: var(--informal); }
+  .category-title.double { color: var(--double); border-color: var(--double); }
+
+  .category-desc {
+    color: var(--text-soft);
+    font-size: 0.88rem;
+    margin-bottom: 1rem;
+    padding-left: 0.7rem;
+    font-style: italic;
+  }
+
+  /* Tarjeta de contracción */
+  .contraction-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1rem 1.15rem;
+    margin-bottom: 0.85rem;
+    box-shadow: var(--shadow);
+    transition: all 0.25s;
+    position: relative;
+  }
+  .contraction-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+  }
+  .contraction-card.learned {
+    background: var(--check-bg);
+    border-color: var(--accent-2);
+    opacity: 0.8;
+  }
+  .contraction-card.learned .c-main {
+    text-decoration: line-through;
+    color: var(--text-soft);
+  }
+
+  .c-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .c-main-block {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    flex: 1;
+    min-width: 0;
+  }
+
+  .c-main {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--accent);
+    cursor: pointer;
+    padding: 0.3rem 0.7rem;
+    border-radius: 10px;
+    background: var(--info-bg);
+    border: 2px solid var(--accent);
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+  }
+  .c-main:hover {
+    transform: scale(1.05);
+    filter: brightness(1.05);
+  }
+  .c-main .speaker {
+    font-size: 1rem;
+    opacity: 0.7;
+  }
+
+  .c-full {
+    font-size: 0.95rem;
+    color: var(--text-soft);
+  }
+  .c-full strong {
+    color: var(--text);
+    font-weight: 700;
+  }
+  .c-full::before {
+    content: "= ";
+    color: var(--accent-2);
+    font-weight: 800;
+  }
+
+  .c-check {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    background: var(--bg);
+    padding: 0.25rem 0.65rem;
+    border-radius: 50px;
+    border: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+  .c-check label {
+    font-size: 0.7rem;
+    color: var(--text-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+  }
+  .c-check input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: var(--accent-2);
+  }
+
+  .c-pron {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 0.6rem;
+  }
+  .c-pron-item {
+    flex: 1;
+    min-width: 120px;
+    padding: 0.4rem 0.6rem;
+    border-radius: 8px;
+    background: var(--pron-bg);
+    border: 1px dashed var(--accent-2);
+    font-size: 0.82rem;
+    color: var(--text-soft);
+  }
+  .c-pron-item .label {
+    display: block;
+    font-size: 0.65rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--accent-2);
+    margin-bottom: 0.1rem;
+  }
+  .c-pron-item .value {
+    font-family: "Courier New", monospace;
+    color: var(--text);
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  .c-meaning {
+    text-align: center;
+    font-size: 0.95rem;
+    color: var(--text);
+    padding: 0.55rem 0.75rem;
+    background: var(--check-bg);
+    border-radius: 10px;
+    margin-bottom: 0.7rem;
+    font-weight: 600;
+  }
+  .c-meaning::before {
+    content: "📖 ";
+    font-size: 0.85rem;
+  }
+
+  .c-explanation {
+    background: var(--info-bg);
+    border-radius: 10px;
+    padding: 0.7rem 0.9rem;
+    font-size: 0.87rem;
+    color: var(--text-soft);
+    margin-bottom: 0.7rem;
+    border-left: 3px solid var(--accent);
+  }
+  .c-explanation strong { color: var(--text); }
+  .c-explanation::before {
+    content: "ℹ️ Explicación: ";
+    font-weight: 800;
+    color: var(--accent);
+  }
+
+  .c-examples-title {
+    font-size: 0.72rem;
+    font-weight: 800;
+    color: var(--text-soft);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0.5rem 0 0.4rem 0.25rem;
+  }
+
+  .c-example {
+    padding: 0.5rem 0.7rem;
+    margin-bottom: 0.35rem;
+    border-radius: 10px;
+    font-size: 0.85rem;
+    border-left: 3px solid var(--accent-2);
+    background: rgba(0, 184, 148, 0.06);
+  }
+  .c-example .ex-en {
+    display: block;
+    font-style: italic;
+    color: var(--text);
+    font-weight: 500;
+  }
+  .c-example .ex-es {
+    display: block;
+    font-size: 0.78rem;
+    color: var(--text-soft);
+    margin-top: 0.1rem;
+  }
+  .c-example .ex-es::before {
+    content: "→ ";
+    font-weight: 700;
+  }
+
+  footer {
+    text-align: center;
+    padding: 2rem 1rem;
+    border-top: 1px solid var(--border);
+    background: var(--card);
+    margin-top: 2rem;
+  }
+  footer a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+  }
+  footer a:hover {
+    color: var(--accent-2);
+    text-decoration: underline;
+  }
+
+  .empty {
+    text-align: center;
+    color: var(--text-soft);
+    padding: 2rem;
+    font-style: italic;
+  }
+
+  .toast {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: var(--accent);
+    color: white;
+    padding: 0.75rem 1.25rem;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 6px 24px rgba(0,0,0,0.25);
+    z-index: 1000;
+    transition: transform 0.3s ease;
+    max-width: 90%;
+    text-align: center;
+  }
+  .toast.show { transform: translateX(-50%) translateY(0); }
+
+  @media (max-width: 640px) {
+    header h1 { font-size: 0.95rem; }
+    .intro h2 { font-size: 1.1rem; }
+    main { padding: 1rem; }
+    .c-main { font-size: 1.25rem; padding: 0.25rem 0.6rem; }
+    .c-pron-item { min-width: 100%; }
+    .c-example { font-size: 0.82rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>📚 Contracciones en Inglés — Guía Completa</h1>
+  <button class="theme-btn" id="themeToggle">🌙 Modo Oscuro</button>
+</header>
+
+<main>
+
+  <div class="intro">
+    <h2>Las ~70 contracciones más usadas del inglés</h2>
+    <p>Una <strong>contracción</strong> une dos palabras en una sola usando un <strong>apóstrofo (')</strong>. Se usan muchísimo en inglés hablado y en escritura informal. Haz clic en cada contracción para escuchar su pronunciación.</p>
+    <div class="progress-bar" style="margin-top:1rem;"><div id="progressBar"></div></div>
+    <p id="progressTxt">0 de 0 contracciones aprendidas</p>
+  </div>
+
+  <div class="tips-box">
+    <h3>💡 Cómo usar esta página</h3>
+    <ul>
+      <li><strong>Toca cada contracción</strong> para escuchar su pronunciación en inglés.</li>
+      <li>Lee la <strong>forma completa</strong> al lado para entender qué palabras se unen.</li>
+      <li>Fíjate en la <strong>pronunciación figurada</strong> (cómo suena en español) y el IPA.</li>
+      <li>Estudia los <strong>ejemplos</strong>: te muestran cómo se usa en contexto real.</li>
+      <li>Marca ✓ solo cuando puedas usarla <strong>sin pensar</strong>.</li>
+    </ul>
+  </div>
+
+  <input type="text" class="search-box" id="searchBox" placeholder="🔍 Buscar contracción, forma completa o significado...">
+
+  <div class="filter-row" id="filters">
+    <button class="active" data-cat="all">Todas</button>
+    <button data-cat="to-be">🔵 To Be</button>
+    <button data-cat="have">🟠 Have</button>
+    <button data-cat="will">🟣 Will / Would</button>
+    <button data-cat="negative">🔴 Negativas</button>
+    <button data-cat="question">🟢 Preguntas</button>
+    <button data-cat="informal">🟡 Informales</button>
+    <button data-cat="double">🟪 Dobles</button>
+  </div>
+
+  <div id="contractionsContainer"></div>
+
+</main>
+
+<footer>
+  <a href="https://jaid227.github.io/EntropiaDigital/" target="_blank" rel="noopener">
+    → © 2026 Mandrágora Entrópica | Desarrollo Web Estratégico ←
+  </a>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// ============ DATOS: CONTRACCIONES ============
+const contracciones = [
+  // ================== TO BE ==================
+  { cat:"to-be", main:"I'm", full:"I am", es:"Yo soy / Yo estoy", pron:"áim", ipa:"/aɪm/",
+    explic:"Contracción de <strong>I</strong> + <strong>am</strong>. La A desaparece y se reemplaza con apóstrofo.",
+    ej:[
+      {en:"I'm happy today.", es:"Estoy feliz hoy."},
+      {en:"I'm from Mexico.", es:"Soy de México."}
+    ]},
+  { cat:"to-be", main:"You're", full:"You are", es:"Tú eres / Tú estás", pron:"iór", ipa:"/jʊər/",
+    explic:"Contracción de <strong>You</strong> + <strong>are</strong>. Se elimina la A de 'are'.",
+    ej:[
+      {en:"You're right.", es:"Tienes razón."},
+      {en:"You're my best friend.", es:"Eres mi mejor amigo."}
+    ]},
+  { cat:"to-be", main:"He's", full:"He is / He has", es:"Él es / Él está / Él tiene", pron:"jis", ipa:"/hiːz/",
+    explic:"Doble uso: puede ser <strong>He is</strong> (él es/está) o <strong>He has</strong> (él tiene, en presente perfecto).",
+    ej:[
+      {en:"He's my brother.", es:"Él es mi hermano."},
+      {en:"He's been working all day.", es:"Él ha estado trabajando todo el día."}
+    ]},
+  { cat:"to-be", main:"She's", full:"She is / She has", es:"Ella es / Ella está / Ella tiene", pron:"shis", ipa:"/ʃiːz/",
+    expl:"Igual que He's: puede ser <strong>She is</strong> o <strong>She has</strong>.",
+    ej:[
+      {en:"She's a doctor.", es:"Ella es doctora."},
+      {en:"She's finished her homework.", es:"Ella ha terminado su tarea."}
+    ]},
+  { cat:"to-be", main:"It's", full:"It is / It has", es:"Es / Está / Ha", pron:"its", ipa:"/ɪts/",
+    explic:"La contracción más común. Puede ser <strong>It is</strong> o <strong>It has</strong>.",
+    ej:[
+      {en:"It's raining.", es:"Está lloviendo."},
+      {en:"It's been a long day.", es:"Ha sido un día largo."}
+    ]},
+  { cat:"to-be", main:"We're", full:"We are", es:"Nosotros somos / estamos", pron:"uír", ipa:"/wɪər/",
+    explic:"Contracción de <strong>We</strong> + <strong>are</strong>.",
+    ej:[
+      {en:"We're ready.", es:"Estamos listos."},
+      {en:"We're from Canada.", es:"Somos de Canadá."}
+    ]},
+  { cat:"to-be", main:"They're", full:"They are", es:"Ellos son / están", pron:"déir", ipa:"/ðeər/",
+    explic:"Contracción de <strong>They</strong> + <strong>are</strong>. Cuidado: suena igual que <em>their</em> y <em>there</em>.",
+    ej:[
+      {en:"They're here.", es:"Ellos están aquí."},
+      {en:"They're very kind.", es:"Son muy amables."}
+    ]},
+  { cat:"to-be", main:"That's", full:"That is", es:"Eso es / Eso está", pron:"dats", ipa:"/ðæts/",
+    explic:"Contracción de <strong>That</strong> + <strong>is</strong>.",
+    ej:[
+      {en:"That's a great idea.", es:"Esa es una gran idea."},
+      {en:"That's mine.", es:"Eso es mío."}
+    ]},
+  { cat:"to-be", main:"There's", full:"There is", es:"Hay (singular)", pron:"dérs", ipa:"/ðeərz/",
+    explic:"Contracción de <strong>There</strong> + <strong>is</strong>. Solo para singular.",
+    ej:[
+      {en:"There's a problem.", es:"Hay un problema."},
+      {en:"There's no time.", es:"No hay tiempo."}
+    ]},
+  { cat:"to-be", main:"Here's", full:"Here is", es:"Aquí está", pron:"jírs", ipa:"/hɪərz/",
+    explic:"Contracción de <strong>Here</strong> + <strong>is</strong>.",
+    ej:[
+      {en:"Here's your coffee.", es:"Aquí está tu café."},
+      {en:"Here's the plan.", es:"Aquí está el plan."}
+    ]},
+
+  // ================== HAVE ==================
+  { cat:"have", main:"I've", full:"I have", es:"Yo he / Yo tengo", pron:"áiv", ipa:"/aɪv/",
+    explic:"Contracción de <strong>I</strong> + <strong>have</strong>. Se usa en presente perfecto.",
+    ej:[
+      {en:"I've been to London.", es:"He estado en Londres."},
+      {en:"I've got a question.", es:"Tengo una pregunta."}
+    ]},
+  { cat:"have", main:"You've", full:"You have", es:"Tú has / Tú tienes", pron:"iúv", ipa:"/juːv/",
+    explic:"Contracción de <strong>You</strong> + <strong>have</strong>.",
+    ej:[
+      {en:"You've done a great job.", es:"Has hecho un gran trabajo."},
+      {en:"You've got mail.", es:"Tienes correo."}
+    ]},
+  { cat:"have", main:"We've", full:"We have", es:"Nosotros hemos / tenemos", pron:"uív", ipa:"/wiːv/",
+    expl:"Contracción de <strong>We</strong> + <strong>have</strong>.",
+    ej:[
+      {en:"We've already eaten.", es:"Ya hemos comido."},
+      {en:"We've been waiting for an hour.", es:"Hemos estado esperando una hora."}
+    ]},
+  { cat:"have", main:"They've", full:"They have", es:"Ellos han / tienen", pron:"déiv", ipa:"/ðeɪv/",
+    explic:"Contracción de <strong>They</strong> + <strong>have</strong>.",
+    ej:[
+      {en:"They've arrived.", es:"Ellos han llegado."},
+      {en:"They've got two kids.", es:"Tienen dos hijos."}
+    ]},
+
+  // ================== WILL / WOULD ==================
+  { cat:"will", main:"I'll", full:"I will", es:"Yo + verbo (futuro)", pron:"áil", ipa:"/aɪl/",
+    explic:"Contracción de <strong>I</strong> + <strong>will</strong>. Se usa para hablar del futuro.",
+    ej:[
+      {en:"I'll call you tomorrow.", es:"Te llamaré mañana."},
+      {en:"I'll help you.", es:"Te ayudaré."}
+    ]},
+  { cat:"will", main:"You'll", full:"You will", es:"Tú + verbo (futuro)", pron:"iúl", ipa:"/juːl/",
+    explic:"Contracción de <strong>You</strong> + <strong>will</strong>.",
+    ej:[
+      {en:"You'll love this place.", es:"Te encantará este lugar."},
+      {en:"You'll see.", es:"Ya verás."}
+    ]},
+  { cat:"will", main:"He'll", full:"He will", es:"Él + verbo (futuro)", pron:"jil", ipa:"/hiːl/",
+    explic:"Contracción de <strong>He</strong> + <strong>will</strong>.",
+    ej:[
+      {en:"He'll be here soon.", es:"Él estará aquí pronto."},
+      {en:"He'll call you.", es:"Él te llamará."}
+    ]},
+  { cat:"will", main:"She'll", full:"She will", es:"Ella + verbo (futuro)", pron:"shil", ipa:"/ʃiːl/",
+    explic:"Contracción de <strong>She</strong> + <strong>will</strong>.",
+    ej:[
+      {en:"She'll arrive at 5.", es:"Ella llegará a las 5."},
+      {en:"She'll understand.", es:"Ella entenderá."}
+    ]},
+  { cat:"will", main:"It'll", full:"It will", es:"+ verbo (futuro)", pron:"ítl", ipa:"/ɪtl/",
+    explic:"Contracción de <strong>It</strong> + <strong>will</strong>.",
+    ej:[
+      {en:"It'll be fine.", es:"Estará bien."},
+      {en:"It'll rain tomorrow.", es:"Lloverá mañana."}
+    ]},
+  { cat:"will", main:"We'll", full:"We will", es:"Nosotros + verbo (futuro)", pron:"uíl", ipa:"/wiːl/",
+    explic:"Contracción de <strong>We</strong> + <strong>will</strong>.",
+    ej:[
+      {en:"We'll see you tomorrow.", es:"Te veremos mañana."},
+      {en:"We'll be there.", es:"Estaremos allí."}
+    ]},
+  { cat:"will", main:"They'll", full:"They will", es:"Ellos + verbo (futuro)", pron:"déil", ipa:"/ðeɪl/",
+    explic:"Contracción de <strong>They</strong> + <strong>will</strong>.",
+    ej:[
+      {en:"They'll come later.", es:"Ellos vendrán después."},
+      {en:"They'll help us.", es:"Ellos nos ayudarán."}
+    ]},
+  { cat:"will", main:"I'd", full:"I would / I had", es:"Yo + condicional / Yo había", pron:"áid", ipa:"/aɪd/",
+    explic:"Doble uso: <strong>I would</strong> (condicional) o <strong>I had</strong> (pasado perfecto).",
+    ej:[
+      {en:"I'd love to go.", es:"Me encantaría ir."},
+      {en:"I'd already left when he called.", es:"Ya me había ido cuando llamó."}
+    ]},
+  { cat:"will", main:"You'd", full:"You would / You had", es:"Tú + condicional / Tú habías", pron:"iúd", ipa:"/juːd/",
+    explic:"Contracción de <strong>You would</strong> o <strong>You had</strong>.",
+    ej:[
+      {en:"You'd better rest.", es:"Más vale que descanses."},
+      {en:"You'd told me before.", es:"Me lo habías dicho antes."}
+    ]},
+
+  // ================== NEGATIVAS ==================
+  { cat:"negative", main:"Isn't", full:"Is not", es:"No es / No está", pron:"ízent", ipa:"/ˈɪz.ənt/",
+    explic:"Se usa con <strong>he, she, it</strong> o sustantivos singulares.",
+    ej:[
+      {en:"She isn't here.", es:"Ella no está aquí."},
+      {en:"It isn't working.", es:"No está funcionando."}
+    ]},
+  { cat:"negative", main:"Aren't", full:"Are not", es:"No son / No están", pron:"arnt", ipa:"/ɑːrnt/",
+    explic:"Se usa con <strong>you, we, they</strong> y plurales.",
+    ej:[
+      {en:"They aren't ready.", es:"Ellos no están listos."},
+      {en:"You aren't listening.", es:"No estás escuchando."}
+    ]},
+  { cat:"negative", main:"Wasn't", full:"Was not", es:"No era / No estaba", pron:"uósent", ipa:"/ˈwɒz.ənt/",
+    explic:"Pasado de <strong>isn't</strong>. Se usa con I, he, she, it.",
+    ej:[
+      {en:"I wasn't home.", es:"No estaba en casa."},
+      {en:"He wasn't happy.", es:"Él no estaba feliz."}
+    ]},
+  { cat:"negative", main:"Weren't", full:"Were not", es:"No eran / No estaban", pron:"uérnt", ipa:"/wɜːrnt/",
+    explic:"Pasado de <strong>aren't</strong>. Se usa con you, we, they.",
+    ej:[
+      {en:"We weren't late.", es:"No llegamos tarde."},
+      {en:"They weren't invited.", es:"Ellos no fueron invitados."}
+    ]},
+  { cat:"negative", main:"Don't", full:"Do not", es:"No (auxiliar)", pron:"dóunt", ipa:"/doʊnt/",
+    explic:"Negación del presente simple para I, you, we, they.",
+    ej:[
+      {en:"I don't know.", es:"No sé."},
+      {en:"They don't like it.", es:"No les gusta."}
+    ]},
+  { cat:"negative", main:"Doesn't", full:"Does not", es:"No (auxiliar 3ª persona)", pron:"dásent", ipa:"/ˈdʌz.ənt/",
+    explic:"Negación del presente simple para he, she, it.",
+    ej:[
+      {en:"She doesn't work here.", es:"Ella no trabaja aquí."},
+      {en:"He doesn't care.", es:"A él no le importa."}
+    ]},
+  { cat:"negative", main:"Didn't", full:"Did not", es:"No (auxiliar pasado)", pron:"dídent", ipa:"/ˈdɪd.ənt/",
+    explic:"Negación del pasado simple para todas las personas.",
+    ej:[
+      {en:"I didn't see him.", es:"No lo vi."},
+      {en:"She didn't come.", es:"Ella no vino."}
+    ]},
+  { cat:"negative", main:"Can't", full:"Cannot", es:"No puedo / No puede", pron:"kant", ipa:"/kænt/",
+    explic:"Negación de <strong>can</strong>. En inglés americano suena <em>kant</em>; en británico, <em>kant</em> también.",
+    ej:[
+      {en:"I can't swim.", es:"No puedo nadar."},
+      {en:"She can't come.", es:"Ella no puede venir."}
+    ]},
+  { cat:"negative", main:"Couldn't", full:"Could not", es:"No podía / No podría", pron:"kúdent", ipa:"/ˈkʊd.ənt/",
+    explic:"Negación de <strong>could</strong>.",
+    ej:[
+      {en:"I couldn't sleep.", es:"No pude dormir."},
+      {en:"He couldn't help.", es:"Él no pudo ayudar."}
+    ]},
+  { cat:"negative", main:"Won't", full:"Will not", es:"No + verbo (futuro)", pron:"uóunt", ipa:"/woʊnt/",
+    explic:"¡Ojo! No es <em>willn't</em> ❌ sino <strong>won't</strong> ✅. Es irregular.",
+    ej:[
+      {en:"I won't forget.", es:"No lo olvidaré."},
+      {en:"She won't tell.", es:"Ella no lo dirá."}
+    ]},
+  { cat:"negative", main:"Wouldn't", full:"Would not", es:"No + condicional", pron:"uúdent", ipa:"/ˈwʊd.ənt/",
+    explic:"Negación de <strong>would</strong>.",
+    ej:[
+      {en:"I wouldn't do that.", es:"No haría eso."},
+      {en:"He wouldn't listen.", es:"Él no escucharía."}
+    ]},
+  { cat:"negative", main:"Shouldn't", full:"Should not", es:"No debería", pron:"shúdent", ipa:"/ˈʃʊd.ənt/",
+    explic:"Negación de <strong>should</strong>.",
+    ej:[
+      {en:"You shouldn't worry.", es:"No deberías preocuparte."},
+      {en:"We shouldn't be late.", es:"No deberíamos llegar tarde."}
+    ]},
+  { cat:"negative", main:"Haven't", full:"Have not", es:"No he / No hemos", pron:"jávent", ipa:"/ˈhæv.ənt/",
+    explic:"Negación del presente perfecto con I, you, we, they.",
+    ej:[
+      {en:"I haven't eaten yet.", es:"Todavía no he comido."},
+      {en:"They haven't arrived.", es:"No han llegado."}
+    ]},
+  { cat:"negative", main:"Hasn't", full:"Has not", es:"No ha", pron:"jásent", ipa:"/ˈhæz.ənt/",
+    explic:"Negación del presente perfecto con he, she, it.",
+    ej:[
+      {en:"She hasn't called.", es:"Ella no ha llamado."},
+      {en:"He hasn't finished.", es:"Él no ha terminado."}
+    ]},
+  { cat:"negative", main:"Hadn't", full:"Had not", es:"No había", pron:"jádent", ipa:"/ˈhæd.ənt/",
+    explic:"Negación del pasado perfecto.",
+    ej:[
+      {en:"I hadn't seen it before.", es:"No lo había visto antes."},
+      {en:"She hadn't arrived yet.", es:"Ella aún no había llegado."}
+    ]},
+  { cat:"negative", main:"Mustn't", full:"Must not", es:"No debe (prohibición)", pron:"másent", ipa:"/ˈmʌs.ənt/",
+    explic:"Negación de <strong>must</strong>. Indica prohibición, no ausencia de obligación.",
+    ej:[
+      {en:"You mustn't smoke here.", es:"No debes fumar aquí."},
+      {en:"We mustn't be late.", es:"No debemos llegar tarde."}
+    ]},
+  { cat:"negative", main:"Needn't", full:"Need not", es:"No hace falta", pron:"níident", ipa:"/ˈniːd.ənt/",
+    explic:"Negación de <strong>need</strong>. Más común en inglés británico.",
+    ej:[
+      {en:"You needn't worry.", es:"No hace falta que te preocupes."},
+      {en:"We needn't hurry.", es:"No hace falta apurarse."}
+    ]},
+
+  // ================== PREGUNTAS ==================
+  { cat:"question", main:"What's", full:"What is", es:"Qué es / Qué está", pron:"uáts", ipa:"/wɒts/",
+    explic:"Contracción de <strong>What</strong> + <strong>is</strong>.",
+    ej:[
+      {en:"What's your name?", es:"¿Cómo te llamas?"},
+      {en:"What's happening?", es:"¿Qué está pasando?"}
+    ]},
+  { cat:"question", main:"Where's", full:"Where is", es:"Dónde está", pron:"uérs", ipa:"/weərz/",
+    explic:"Contracción de <strong>Where</strong> + <strong>is</strong>.",
+    ej:[
+      {en:"Where's the bathroom?", es:"¿Dónde está el baño?"},
+      {en:"Where's my phone?", es:"¿Dónde está mi teléfono?"}
+    ]},
+  { cat:"question", main:"Who's", full:"Who is / Who has", es:"Quién es / Quién ha", pron:"jus", ipa:"/huːz/",
+    explic:"Contracción de <strong>Who</strong> + <strong>is</strong> o <strong>Who</strong> + <strong>has</strong>.",
+    ej:[
+      {en:"Who's that?", es:"¿Quién es ese?"},
+      {en:"Who's been here?", es:"¿Quién ha estado aquí?"}
+    ]},
+  { cat:"question", main:"When's", full:"When is", es:"Cuándo es", pron:"uéns", ipa:"/wenz/",
+    explic:"Contracción de <strong>When</strong> + <strong>is</strong>.",
+    ej:[
+      {en:"When's the meeting?", es:"¿Cuándo es la reunión?"},
+      {en:"When's your birthday?", es:"¿Cuándo es tu cumpleaños?"}
+    ]},
+  { cat:"question", main:"Why's", full:"Why is", es:"Por qué es / Por qué está", pron:"uáis", ipa:"/waɪz/",
+    explic:"Contracción de <strong>Why</strong> + <strong>is</strong>.",
+    ej:[
+      {en:"Why's he angry?", es:"¿Por qué está enojado?"},
+      {en:"Why's it so cold?", es:"¿Por qué hace tanto frío?"}
+    ]},
+  { cat:"question", main:"How's", full:"How is", es:"Cómo está", pron:"jáus", ipa:"/haʊz/",
+    explic:"Contracción de <strong>How</strong> + <strong>is</strong>.",
+    ej:[
+      {en:"How's it going?", es:"¿Cómo va todo?"},
+      {en:"How's your mom?", es:"¿Cómo está tu mamá?"}
+    ]},
+
+  // ================== INFORMALES ==================
+  { cat:"informal", main:"Gonna", full:"Going to", es:"Voy a / Vas a (futuro)", pron:"góna", ipa:"/ˈɡɒnə/",
+    explic:"Forma informal de <strong>going to</strong>. Solo en habla, nunca por escrito formal.",
+    ej:[
+      {en:"I'm gonna call you.", es:"Te voy a llamar."},
+      {en:"We're gonna win.", es:"Vamos a ganar."}
+    ]},
+  { cat:"informal", main:"Wanna", full:"Want to", es:"Quiero / Quieres", pron:"uána", ipa:"/ˈwɒnə/",
+    explic:"Forma informal de <strong>want to</strong>. Muy común en inglés hablado.",
+    ej:[
+      {en:"I wanna go home.", es:"Quiero ir a casa."},
+      {en:"Do you wanna dance?", es:"¿Quieres bailar?"}
+    ]},
+  { cat:"informal", main:"Gotta", full:"Got to / Have got to", es:"Tengo que / Tienes que", pron:"góra", ipa:"/ˈɡɒtə/",
+    explic:"Forma informal de <strong>got to</strong> (obligación).",
+    ej:[
+      {en:"I gotta go.", es:"Tengo que irme."},
+      {en:"You gotta see this.", es:"Tienes que ver esto."}
+    ]},
+  { cat:"informal", main:"Kinda", full:"Kind of", es:"Un poco / Algo así", pron:"káinda", ipa:"/ˈkaɪndə/",
+    explic:"Forma informal de <strong>kind of</strong>. Suaviza una afirmación.",
+    ej:[
+      {en:"It's kinda late.", es:"Es un poco tarde."},
+      {en:"I'm kinda tired.", es:"Estoy algo cansado."}
+    ]},
+  { cat:"informal", main:"Sorta", full:"Sort of", es:"Algo así / Más o menos", pron:"sórta", ipa:"/ˈsɔːrtə/",
+    explic:"Forma informal de <strong>sort of</strong>. Similar a <em>kinda</em>.",
+    ej:[
+      {en:"I sorta like it.", es:"Me gusta más o menos."},
+      {en:"It's sorta strange.", es:"Es algo extraño."}
+    ]},
+  { cat:"informal", main:"Gimme", full:"Give me", es:"Dame", pron:"guími", ipa:"/ˈɡɪmi/",
+    explic:"Forma informal de <strong>give me</strong>. Imperativo directo.",
+    ej:[
+      {en:"Gimme a break!", es:"¡Dame un respiro!"},
+      {en:"Gimme a second.", es:"Dame un segundo."}
+    ]},
+  { cat:"informal", main:"Lemme", full:"Let me", es:"Déjame", pron:"lémi", ipa:"/ˈlɛmi/",
+    explic:"Forma informal de <strong>let me</strong>.",
+    ej:[
+      {en:"Lemme think.", es:"Déjame pensar."},
+      {en:"Lemme see.", es:"Déjame ver."}
+    ]},
+  { cat:"informal", main:"'Cause / Cuz", full:"Because", es:"Porque", pron:"kos", ipa:"/kɒz/",
+    explic:"Forma corta de <strong>because</strong>. Se escribe con apóstrofo o como 'cuz'.",
+    ej:[
+      {en:"I'm late 'cause of traffic.", es:"Llego tarde por el tráfico."},
+      {en:"Just cuz.", es:"Solo porque sí."}
+    ]},
+  { cat:"informal", main:"Y'all", full:"You all", es:"Ustedes / Todos ustedes", pron:"yol", ipa:"/jɔːl/",
+    explic:"Típico del sur de EE.UU. Significa <strong>you all</strong> (ustedes).",
+    ej:[
+      {en:"Y'all ready?", es:"¿Están listos?"},
+      {en:"See y'all tomorrow.", es:"Nos vemos mañana."}
+    ]},
+  { cat:"informal", main:"Dunno", full:"Don't know", es:"No sé", pron:"dáno", ipa:"/dəˈnoʊ/",
+    explic:"Forma hablada rápida de <strong>don't know</strong>. Casi no se escribe.",
+    ej:[
+      {en:"I dunno.", es:"No sé."},
+      {en:"Dunno what to do.", es:"No sé qué hacer."}
+    ]},
+
+  // ================== DOBLES ==================
+  { cat:"double", main:"I'd've", full:"I would have", es:"Yo habría", pron:"áidav", ipa:"/ˈaɪdəv/",
+    explic:"Doble contracción: <strong>I would have</strong>. Solo en habla muy informal.",
+    ej:[
+      {en:"I'd've helped if I could.", es:"Habría ayudado si hubiera podido."},
+      {en:"I'd've called you.", es:"Te habría llamado."}
+    ]},
+  { cat:"double", main:"You'd've", full:"You would have", es:"Tú habrías", pron:"iúdav", ipa:"/ˈjuːdəv/",
+    explic:"Doble contracción de <strong>You would have</strong>.",
+    ej:[
+      {en:"You'd've loved it.", es:"Te habría encantado."},
+      {en:"You'd've been proud.", es:"Habrías estado orgulloso."}
+    ]},
+  { cat:"double", main:"He'd've", full:"He would have", es:"Él habría", pron:"jídav", ipa:"/ˈhiːdəv/",
+    explic:"Doble contracción de <strong>He would have</strong>.",
+    ej:[
+      {en:"He'd've come if invited.", es:"Habría venido si lo hubieran invitado."},
+      {en:"He'd've said yes.", es:"Habría dicho que sí."}
+    ]},
+  { cat:"double", main:"Shouldn't've", full:"Should not have", es:"No habría debido", pron:"shúdentav", ipa:"/ˈʃʊdəntəv/",
+    explic:"Doble negación + contracción. Muy común en inglés hablado.",
+    ej:[
+      {en:"You shouldn't've done that.", es:"No deberías haber hecho eso."},
+      {en:"I shouldn't've said it.", es:"No debí haberlo dicho."}
+    ]},
+  { cat:"double", main:"Couldn't've", full:"Could not have", es:"No habría podido", pron:"kúdentav", ipa:"/ˈkʊdəntəv/",
+    explic:"Doble contracción de <strong>could not have</strong>.",
+    ej:[
+      {en:"I couldn't've known.", es:"No habría podido saberlo."},
+      {en:"She couldn't've helped.", es:"Ella no habría podido ayudar."}
+    ]},
+  { cat:"double", main:"Wouldn't've", full:"Would not have", es:"No habría", pron:"uúdentav", ipa:"/ˈwʊdəntəv/",
+    explic:"Doble contracción de <strong>would not have</strong>.",
+    ej:[
+      {en:"I wouldn't've guessed.", es:"No lo habría adivinado."},
+      {en:"He wouldn't've agreed.", es:"Él no habría aceptado."}
+    ]}
+];
+
+// ============ ESTADO ============
+let aprendidas = JSON.parse(localStorage.getItem('contraccionesAprendidas') || '[]');
+let filtroActual = 'all';
+let busqueda = '';
+
+// ============ TEMA ============
+const themeBtn = document.getElementById('themeToggle');
+const savedTheme = localStorage.getItem('theme') || 'light';
+document.documentElement.setAttribute('data-theme', savedTheme);
+themeBtn.textContent = savedTheme === 'dark' ? '☀️ Modo Claro' : '🌙 Modo Oscuro';
+
+themeBtn.addEventListener('click', () => {
+  const current = document.documentElement.getAttribute('data-theme');
+  const next = current === 'dark' ? 'light' : 'dark';
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+  themeBtn.textContent = next === 'dark' ? '☀️ Modo Claro' : '🌙 Modo Oscuro';
+});
+
+// ============ VOZ ============
+let voices = [];
+let preferredVoice = null;
+
+function loadVoices() {
+  if (!('speechSynthesis' in window)) return;
+  voices = speechSynthesis.getVoices();
+  const enVoices = voices.filter(v => v.lang.startsWith('en'));
+  preferredVoice =
+    enVoices.find(v => v.lang === 'en-US' && v.name.includes('Google')) ||
+    enVoices.find(v => v.lang === 'en-US') ||
+    enVoices.find(v => v.lang.startsWith('en')) ||
+    null;
+}
+
+if ('speechSynthesis' in window) {
+  loadVoices();
+  speechSynthesis.onvoiceschanged = loadVoices;
+}
+
+function speak(text, rate = 0.85) {
+  if (!('speechSynthesis' in window)) {
+    showToast('⚠️ Tu navegador no soporta la síntesis de voz');
+    return;
+  }
+  speechSynthesis.cancel();
+  const utterance = new SpeechSynthesisUtterance(text);
+  utterance.lang = 'en-US';
+  utterance.rate = rate;
+  utterance.pitch = 1;
+  if (preferredVoice) utterance.voice = preferredVoice;
+  speechSynthesis.speak(utterance);
+}
+
+// ============ TOAST ============
+let toastTimeout;
+function showToast(msg) {
+  const toast = document.getElementById('toast');
+  toast.textContent = msg;
+  toast.classList.add('show');
+  clearTimeout(toastTimeout);
+  toastTimeout = setTimeout(() => toast.classList.remove('show'), 2000);
+}
+
+// ============ HELPERS ============
+const catNames = {
+  "to-be": "🔵 Sujeto + To Be",
+  "have": "🟠 Sujeto + Have",
+  "will": "🟣 Will / Would / Had",
+  "negative": "🔴 Negativas (verbo + not)",
+  "question": "🟢 Preguntas (Wh- + is)",
+  "informal": "🟡 Informales (solo habla)",
+  "double": "🟪 Dobles contracciones"
+};
+
+const catDesc = {
+  "to-be": "Contracciones del verbo TO BE (am / is / are) con el sujeto.",
+  "have": "Contracciones del verbo TO HAVE en presente perfecto.",
+  "will": "Contracciones con WILL, WOULD y HAD.",
+  "negative": "Contracciones negativas: verbo + not. Las más usadas del inglés.",
+  "question": "Contracciones para hacer preguntas con What, Where, Who, etc.",
+  "informal": "Contracciones que solo se usan al hablar, no en escritura formal.",
+  "double": "Contracciones dobles (muy informales): dos reducciones en una palabra."
+};
+
+// ============ RENDER ============
+const container = document.getElementById('contractionsContainer');
+
+function render() {
+  container.innerHTML = '';
+  const q = busqueda.toLowerCase();
+
+  const filtradas = contracciones.filter(c => {
+    const matchCat = filtroActual === 'all' || c.cat === filtroActual;
+    const matchSearch = !q ||
+      c.main.toLowerCase().includes(q) ||
+      c.full.toLowerCase().includes(q) ||
+      c.es.toLowerCase().includes(q) ||
+      c.pron.toLowerCase().includes(q);
+    return matchCat && matchSearch;
+  });
+
+  if (filtradas.length === 0) {
+    container.innerHTML = '<p class="empty">No se encontraron contracciones.</p>';
+    actualizarProgreso();
+    return;
+  }
+
+  const grupos = {};
+  filtradas.forEach(c => {
+    if (!grupos[c.cat]) grupos[c.cat] = [];
+    grupos[c.cat].push(c);
+  });
+
+  Object.keys(grupos).forEach(cat => {
+    const title = document.createElement('div');
+    title.className = 'category-title ' + cat;
+    title.textContent = catNames[cat] || cat;
+    container.appendChild(title);
+
+    const desc = document.createElement('p');
+    desc.className = 'category-desc';
+    desc.textContent = catDesc[cat] || '';
+    container.appendChild(desc);
+
+    grupos[cat].forEach(c => {
+      const isLearned = aprendidas.includes(c.main);
+      const card = document.createElement('div');
+      card.className = 'contraction-card' + (isLearned ? ' learned' : '');
+
+      const key = encodeURIComponent(c.main);
+      const speakKey = encodeURIComponent(c.main.replace(/'/g, ''));
+
+      const examplesHTML = c.ej.map(e => `
+        <div class="c-example">
+          <span class="ex-en">${e.en}</span>
+          <span class="ex-es">${e.es}</span>
+        </div>
+      `).join('');
+
+      card.innerHTML = `
+        <div class="c-header">
+          <div class="c-main-block">
+            <span class="c-main" data-speak="${speakKey}" title="Clic para escuchar">
+              ${c.main}
+              <span class="speaker">🔊</span>
+            </span>
+            <span class="c-full"><strong>${c.full}</strong></span>
+          </div>
+          <div class="c-check">
+            <label>Aprendida</label>
+            <input type="checkbox" data-key="${key}" ${isLearned ? 'checked' : ''}>
+          </div>
+        </div>
+
+        <div class="c-pron">
+          <div class="c-pron-item">
+            <span class="label">🔤 Pronunciación figurada</span>
+            <span class="value">${c.pron}</span>
+          </div>
+          <div class="c-pron-item">
+            <span class="label">🎯 IPA</span>
+            <span class="value">${c.ipa}</span>
+          </div>
+        </div>
+
+        <div class="c-meaning">${c.es}</div>
+
+        <div class="c-explanation">${c.explic}</div>
+
+        <div class="c-examples-title">Ejemplos</div>
+        ${examplesHTML}
+      `;
+      container.appendChild(card);
+    });
+  });
+
+  // Listeners: click en la contracción para escuchar
+  container.querySelectorAll('.c-main').forEach(el => {
+    el.addEventListener('click', () => {
+      const text = decodeURIComponent(el.dataset.speak);
+      speak(text, 0.85);
+      showToast(`🔊 ${text}`);
+      el.style.transform = 'scale(0.95)';
+      setTimeout(() => el.style.transform = '', 150);
+    });
+  });
+
+  // Listeners: checkboxes
+  container.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+    cb.addEventListener('change', (e) => {
+      const key = decodeURIComponent(e.target.dataset.key);
+      if (e.target.checked) {
+        if (!aprendidas.includes(key)) aprendidas.push(key);
+      } else {
+        aprendidas = aprendidas.filter(a => a !== key);
+      }
+      localStorage.setItem('contraccionesAprendidas', JSON.stringify(aprendidas));
+      e.target.closest('.contraction-card').classList.toggle('learned', e.target.checked);
+      actualizarProgreso();
+    });
+  });
+
+  actualizarProgreso();
+}
+
+function actualizarProgreso() {
+  const total = contracciones.length;
+  const hechas = aprendidas.length;
+  const pct = total ? (hechas / total) * 100 : 0;
+  document.getElementById('progressBar').style.width = pct + '%';
+  document.getElementById('progressTxt').textContent =
+    `${hechas} de ${total} contracciones aprendidas (${pct.toFixed(1)}%)`;
+}
+
+// ============ FILTROS ============
+document.querySelectorAll('#filters button').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('#filters button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    filtroActual = btn.dataset.cat;
+    render();
+  });
+});
+
+// ============ BUSCADOR ============
+document.getElementById('searchBox').addEventListener('input', (e) => {
+  busqueda = e.target.value;
+  render();
+});
+
+// ============ INIT ============
+render();
+</script>
+
+</body>
+</html>
